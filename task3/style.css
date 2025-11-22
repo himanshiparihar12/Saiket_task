@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #b1f5bf;
+}
+
+/* --- Desktop Grid Layout --- */
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+}
+
+/* Styling each section */
+.header, .sidebar, .content, .footer {
+    padding: 20px;
+    border: 2px solid #000;
+    background: #fff;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* Assigning grid areas */
+.header { grid-area: header; background: #4cc46a; }
+.sidebar { grid-area: sidebar; background: #88e7a1; }
+.content { grid-area: content; background: #d7ffe2; }
+.footer { grid-area: footer; background: #4cc46a; text-align: center; }
+
+/* --- Mobile Responsive Layout --- */
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "content"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+}
